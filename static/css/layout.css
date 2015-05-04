@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700);
+
+#map {
+  background: url(textured_paper.jpeg) repeat;
+  float: right;
+}
+
+#flight_data {
+    line-height: 50px;
+    float: left;
+    display: none;
+}
+
+#registerDrone {
+	width: 220px;
+	float: left;
+	text-align: center;
+}
+
+.custom-mouse-position {
+    float: right;
+}
+
+#tags {
+  display: none;
+}
+
+body, h1, h2, h3, h4, p, li, td, th {
+  font-family: Quattrocento Sans;
+}
+.navbar-inverse .navbar-inner {
+  background: #1F6B75;
+}
+.navbar-inverse .brand {
+  color: white;
+  padding: 5px;
+}
+
+#battery {
+  color: black;
+}
+
+#battery.criticalLevel {
+  color: red;
+}
