@@ -1,4 +1,4 @@
-#General description:
+# General description:
 
 The ground control station is meant to give the operator a command and control interface to the drone.
 Its main goals are:
@@ -12,7 +12,7 @@ A web based application allows easy use in all platforms and the use of python a
 
 
 
-#Components and how they work together
+# Components and how they work together
 The user interface is a single page application, written in HTML and JavaScript, running on the operator’s browser, communicating with the python Flask based web server running on the ground control station (which can, but doesn’t have to be, the same machine) via HTTP requests.
 It contains a OpenLayers based map on which the operator sees the drone as a blue dot and a small data panel of drone data including: Location(GPS lat/long), altitude, orientation and battery level.
 The operator can draw routes and perimeter on the map and send them to the drone as a flight plan.
@@ -25,7 +25,7 @@ The message queue module provides the basis for communication between the drone 
 It is a basic priority queue based on json objects sent via HTTP requests. it also enables to define certain message types as time sensitive so that messages that were not delivered for some reason will be pushed to the back of the line if a newer message from the same type arrives.
 This is useful for the following scenario: If a status update was delayed and a newer one is available the old one is irrelevant and we would want to send the most updated status first and the old one later for logging.
 
-#Technology choices in the light of the project goals:
+# Technology choices in the light of the project goals:
 
 Web-based User Interface - Keeping portability in mind, HTML and JavaScript enable showing the UI on just about any platform out there.
 The use of the Bootstrap JS library enables low effort on adapting the UI to mobile devices.
@@ -35,7 +35,7 @@ OpenLayers Map - OpenLayers is a modular, JavaScript based, open-source maps pro
 Python - A common language among open-source communities with a lot of useful built-in libraries. Hence, the online support for any technical issues is really easy to get and is usually based on past knowledge of the community.
 The “Flask” micro-framework is based on Python and enables starting a web server really easily with little adjustments and configurations to make before you are “good to go”.
 
-#Future Development suggestions:
+# Future Development suggestions:
 
 Live video streaming - Embed live video that’s broadcasted from the drone in the User Interface, while maintaining high quality of service for the rest the operator features.
 
@@ -43,7 +43,7 @@ Self-Made map tiles - Have the drone to perform a pre-mission flight in the same
 
 
 
-#Setting up the application:
+# Setting up the application:
 Please make sure you have the following prerequisites installed/filled prior to trying to run the application:
 * Python 2.7 or higher 
   * Preferably 2.x and not 3.x
@@ -55,7 +55,7 @@ Please make sure you have the following prerequisites installed/filled prior to 
 
 After the prerequisites above are installed, you should download the content of our git repository from: https://github.com/fselius/GIPdrone/tree/master/QuadCopterServer 
 
-#Running the application:
+# Running the application:
 Assuming you followed the setup instructions above, all you will have to do now is run groundControl.py that you have downloaded from the repository and you will have your ground control server up and running.
 Next you would want to access the Operator UI using your web browser by the IP address of the machine running the  server, accessing port 8080. (e.g. if your computer got the local IP of 192.168.1.10, the application would be accessed by the following address: http://192.168.1.10:8080/ )
 Note: If you are running the UI on the same machine as you are running the ground control server -  you can also access the UI by the address of http://127.0.0.1:8080/ 
@@ -83,7 +83,7 @@ Please note - the current implementation will not resend track data to the drone
 
 Quick Zoom - When map drawing is off, you can hold the “shift” key and by clicking and dragging the cursor on the map you will get a temporary rectangle drawn on the map. Once the mouse button will be released - the map will zoom in to the rectangle you just finished drawing.
 
-#Developer Notes:
+# Developer Notes:
 
 As a developer, you might want to add new API calls to the web server, and might want to extend the capabilities of the default message handling.
 
